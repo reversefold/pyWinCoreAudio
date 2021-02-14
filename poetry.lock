@@ -1,0 +1,17 @@
+[[package]]
+name = "comtypes"
+version = "1.1.8"
+description = "Pure Python COM package"
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.9"
+content-hash = "02333bcdafd70b638092635b9aaee6125d978b69f42d9b2fb570c55f5c8ee2d2"
+
+[metadata.files]
+comtypes = [
+    {file = "comtypes-1.1.8.zip", hash = "sha256:00b56f45bb1864ad42e49a3d7203199e4792365c8b1e0c3691d74eede5452064"},
+]
