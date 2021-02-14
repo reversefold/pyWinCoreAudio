@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyWinCoreAudio"
-version = "0.1"
+version = "0.2"
 description = ""
 authors = ["Julia Patrin <papercrane@reversefold.com>"]
 packages = [
@@ -8,7 +8,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.7"
 comtypes = "^1.1.8"
 
 [tool.poetry.dev-dependencies]

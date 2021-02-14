@@ -8,8 +8,8 @@ python-versions = "*"
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.9"
-content-hash = "02333bcdafd70b638092635b9aaee6125d978b69f42d9b2fb570c55f5c8ee2d2"
+python-versions = "^3.7"
+content-hash = "0c4fb921a0e8958d91d79c49c5e6c33317fa789f4eb29b88d74060654663ff69"
 
 [metadata.files]
 comtypes = [
