@@ -80,9 +80,10 @@ class AudioVolume(object):
             IID_IAudioEndpointVolumeEx,
             PIAudioEndpointVolumeEx
         )
-        support = self.__volume.QueryHardwareSupport()
-        if support | ENDPOINT_HARDWARE_SUPPORT_VOLUME != support:
-            raise NotImplementedError
+        # This is only shows if the *hardware* supports these features. Hardware support isn't required to use these features, software will perform them in lieu of hardware.
+        # support = self.__volume.QueryHardwareSupport()
+        # if support | ENDPOINT_HARDWARE_SUPPORT_VOLUME != support:
+        #     raise NotImplementedError
 
     @property
     def endpoint(self):
@@ -134,20 +135,20 @@ class AudioVolume(object):
 
     @property
     def mute(self):
-        support = self.__volume.QueryHardwareSupport()
+        # support = self.__volume.QueryHardwareSupport()
 
-        if support | ENDPOINT_HARDWARE_SUPPORT_MUTE == support:
+        # if support | ENDPOINT_HARDWARE_SUPPORT_MUTE == support:
             return bool(self.__volume.GetMute())
-        raise AttributeError
+        # raise AttributeError
 
     @mute.setter
     def mute(self, mute):
-        support = self.__volume.QueryHardwareSupport()
+        # support = self.__volume.QueryHardwareSupport()
 
-        if support | ENDPOINT_HARDWARE_SUPPORT_MUTE == support:
+        # if support | ENDPOINT_HARDWARE_SUPPORT_MUTE == support:
             self.__volume.SetMute(mute)
-        else:
-            raise AttributeError
+        # else:
+        #     raise AttributeError
 
     @property
     def range(self):
@@ -196,7 +197,6 @@ class AudioPeakMeter(object):
 
     @property
     def channel_peak_values(self):
-
         # support = self.__peak_meter.QueryHardwareSupport()
         # if support | ENDPOINT_HARDWARE_SUPPORT_METER != support:
             # raise NotImplementedError
