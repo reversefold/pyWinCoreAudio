@@ -18,16 +18,6 @@
 
 
 import ctypes
-import comtypes
-from ks import PKSMETHOD
-from iid import (
-    IID_IKsControl,
-)
-from enum import (
-    AUDIO_STREAM_CATEGORY,
-    AUDCLNT_STREAMOPTIONS
-)
-
 from ctypes.wintypes import (
     FLOAT,
     DWORD,
@@ -37,6 +27,17 @@ from ctypes.wintypes import (
     BYTE,
     LPVOID,
     ULONG
+)
+
+import comtypes
+
+from .ks import PKSMETHOD
+from .iid import (
+    IID_IKsControl,
+)
+from .enum import (
+    AUDIO_STREAM_CATEGORY,
+    AUDCLNT_STREAMOPTIONS
 )
 
 

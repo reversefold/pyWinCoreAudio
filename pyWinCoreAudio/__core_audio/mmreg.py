@@ -16,15 +16,16 @@
 # You should have received a copy of the GNU General Public License along
 # with EventGhost. If not, see <http://www.gnu.org/licenses/>.
 
-
 import ctypes
-import comtypes
 from ctypes.wintypes import (
     DWORD,
     BYTE,
     WORD,
     SHORT,
 )
+
+import comtypes
+
 
 POINTER = ctypes.POINTER
 GUID = comtypes.GUID

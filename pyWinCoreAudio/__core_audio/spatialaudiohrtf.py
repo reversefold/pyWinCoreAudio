@@ -17,31 +17,34 @@
 # with EventGhost. If not, see <http://www.gnu.org/licenses/>.
 
 import ctypes
+from ctypes.wintypes import (
+    FLOAT,
+    HANDLE,
+)
+
 import comtypes
-from audioclient import PWAVEFORMATEX
-from spatialaudioclient import PISpatialAudioObjectRenderStreamNotify
-from enum import (
+
+from .audioclient import PWAVEFORMATEX
+from .spatialaudioclient import PISpatialAudioObjectRenderStreamNotify
+from .enum import (
     AUDIO_STREAM_CATEGORY,
     AudioObjectType
 )
-from iid import (
+from .iid import (
     IID_ISpatialAudioObjectForHrtf,
     IID_ISpatialAudioObjectRenderStreamForHrtf
 )
-from _spatialaudioclient import (
+from .spatialaudioclient import (
     ISpatialAudioObjectRenderStreamBase,
     ISpatialAudioObjectBase
 )
-from enum import (
+from .enum import (
     SpatialAudioHrtfEnvironmentType,
     SpatialAudioHrtfDirectivityType,
     SpatialAudioHrtfDistanceDecayType,
     PSpatialAudioHrtfEnvironmentType
 )
-from ctypes.wintypes import (
-    FLOAT,
-    HANDLE,
-)
+
 
 COMMETHOD = comtypes.COMMETHOD
 UINT32 = ctypes.c_uint32

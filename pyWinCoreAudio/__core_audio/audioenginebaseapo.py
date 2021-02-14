@@ -17,15 +17,6 @@
 # with EventGhost. If not, see <http://www.gnu.org/licenses/>.
 
 import ctypes
-import comtypes
-from mmdeviceapi import PIMMDeviceCollection
-from propertystore import PIPropertyStore
-from audiomediatype import PIAudioMediaType
-from audioapotypes import PAPO_CONNECTION_PROPERTY
-from enum import (
-    APO_CONNECTION_BUFFER_TYPE,
-    APO_FLAG
-)
 from ctypes.wintypes import (
     UINT,
     LPARAM,
@@ -36,7 +27,18 @@ from ctypes.wintypes import (
     BYTE,
     LPCVOID
 )
-from _iid import (
+
+import comtypes
+
+from .mmdeviceapi import PIMMDeviceCollection
+from .propertystore import PIPropertyStore
+from .audiomediatype import PIAudioMediaType
+from .audioapotypes import PAPO_CONNECTION_PROPERTY
+from .enum import (
+    APO_CONNECTION_BUFFER_TYPE,
+    APO_FLAG
+)
+from .iid import (
     IID_IAudioProcessingObjectRT,
     IID_IAudioProcessingObjectVBR,
     IID_IAudioProcessingObjectConfiguration,

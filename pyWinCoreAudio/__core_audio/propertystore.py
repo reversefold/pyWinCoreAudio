@@ -1,5 +1,4 @@
 import ctypes
-
 from ctypes.wintypes import (
     LARGE_INTEGER,
     VARIANT_BOOL,
@@ -13,6 +12,7 @@ from ctypes.wintypes import (
     DOUBLE,
     UINT
 )
+
 from comtypes.automation import (
     SCODE,
     IDispatch,

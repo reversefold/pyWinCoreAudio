@@ -16,15 +16,7 @@
 # You should have received a copy of the GNU General Public License along
 # with EventGhost. If not, see <http://www.gnu.org/licenses/>.
 
-import comtypes
 import ctypes
-from comtypes.automation import VARTYPE
-from enum import (
-    PConnectorType,
-    PDataFlow,
-    KSJACK_SINK_CONNECTIONTYPE,
-    PPartType,
-)
 from ctypes.wintypes import (
     FLOAT,
     UINT,
@@ -38,7 +30,17 @@ from ctypes.wintypes import (
     WCHAR,
     LPVOID
 )
-from iid import (
+
+import comtypes
+from comtypes.automation import VARTYPE
+
+from .enum import (
+    PConnectorType,
+    PDataFlow,
+    KSJACK_SINK_CONNECTIONTYPE,
+    PPartType,
+)
+from .iid import (
     IID_IAudioAutoGainControl,
     IID_IAudioBass,
     IID_IAudioMidrange,

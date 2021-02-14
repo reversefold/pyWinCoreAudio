@@ -17,8 +17,10 @@
 # with EventGhost. If not, see <http://www.gnu.org/licenses/>.
 
 import ctypes
-from comtypes import GUID, POINTER
 from ctypes.wintypes import ULONG, BOOL
+
+from comtypes import GUID, POINTER
+
 
 LONGLONG = ctypes.c_longlong
 

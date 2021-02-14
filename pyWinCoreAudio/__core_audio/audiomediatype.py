@@ -17,14 +17,16 @@
 # with EventGhost. If not, see <http://www.gnu.org/licenses/>.
 
 import ctypes
-import comtypes
-from iid import IID_IAudioMediaType
-from audioclient import WAVEFORMATEX
 from ctypes.wintypes import (
     BOOL,
     DWORD,
     FLOAT
 )
+
+import comtypes
+
+from .iid import IID_IAudioMediaType
+from .audioclient import WAVEFORMATEX
 
 POINTER = ctypes.POINTER
 COMMETHOD = comtypes.COMMETHOD

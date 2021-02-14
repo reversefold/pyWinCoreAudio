@@ -17,19 +17,6 @@
 # with EventGhost. If not, see <http://www.gnu.org/licenses/>.
 
 import ctypes
-import comtypes
-from enum import PAudioSessionState
-from audioclient import PISimpleAudioVolume
-from iid import (
-    IID_IAudioSessionEvents,
-    IID_IAudioSessionControl,
-    IID_IAudioSessionControl2,
-    IID_IAudioSessionManager,
-    IID_IAudioSessionManager2,
-    IID_IAudioSessionNotification,
-    IID_IAudioVolumeDuckNotification,
-    IID_IAudioSessionEnumerator,
-)
 from ctypes.wintypes import (
     FLOAT,
     INT,
@@ -38,6 +25,21 @@ from ctypes.wintypes import (
     LPWSTR,
     LPCWSTR,
     WCHAR,
+)
+
+import comtypes
+
+from .enum import PAudioSessionState
+from .audioclient import PISimpleAudioVolume
+from .iid import (
+    IID_IAudioSessionEvents,
+    IID_IAudioSessionControl,
+    IID_IAudioSessionControl2,
+    IID_IAudioSessionManager,
+    IID_IAudioSessionManager2,
+    IID_IAudioSessionNotification,
+    IID_IAudioVolumeDuckNotification,
+    IID_IAudioSessionEnumerator,
 )
 
 

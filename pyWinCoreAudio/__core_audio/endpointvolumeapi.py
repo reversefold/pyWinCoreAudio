@@ -17,24 +17,26 @@
 # with EventGhost. If not, see <http://www.gnu.org/licenses/>.
 
 import ctypes
-import comtypes
-from mmdeviceapi import IMMDeviceEnumerator
-from comtypes import (
-    GUID,
-    COMMETHOD,
-    CLSCTX_INPROC_SERVER,
-)
-from iid import (
-    IID_IAudioEndpointVolume,
-    IID_IAudioEndpointVolumeEx,
-    IID_IAudioMeterInformation,
-    IID_IAudioEndpointVolumeCallback
-)
 from ctypes.wintypes import (
     FLOAT,
     UINT,
     DWORD,
     BOOL,
+)
+
+import comtypes
+from comtypes import (
+    GUID,
+    COMMETHOD,
+    CLSCTX_INPROC_SERVER,
+)
+
+from .mmdeviceapi import IMMDeviceEnumerator
+from .iid import (
+    IID_IAudioEndpointVolume,
+    IID_IAudioEndpointVolumeEx,
+    IID_IAudioMeterInformation,
+    IID_IAudioEndpointVolumeCallback
 )
 
 UINT32 = ctypes.c_uint32

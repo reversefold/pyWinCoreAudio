@@ -18,8 +18,10 @@
 
 from ctypes import sizeof, HRESULT
 from ctypes.wintypes import FLOAT# , ULONG
+
 from comtypes import GUID
-from propertystore import PROPERTYKEY
+
+from .propertystore import PROPERTYKEY
 
 
 def _HRESULT_TYPEDEF_(_sc):

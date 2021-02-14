@@ -17,9 +17,6 @@
 # with EventGhost. If not, see <http://www.gnu.org/licenses/>.
 
 import ctypes
-from comtypes import GUID
-from mmdeviceapi import PIMMDevice
-
 from ctypes.wintypes import (
     FLOAT,
     UINT,
@@ -27,6 +24,10 @@ from ctypes.wintypes import (
     ULONG,
     DWORD,
 )
+
+from comtypes import GUID
+
+from .mmdeviceapi import PIMMDevice
 
 
 HNSTIME = ctypes.c_longlong

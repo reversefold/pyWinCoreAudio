@@ -18,11 +18,12 @@
 
 import threading
 import ctypes
-import comtypes
 import ctypes.util
 import os
 from ctypes import wintypes
 from io import BytesIO
+
+import comtypes
 
 
 RT_CURSOR = 1

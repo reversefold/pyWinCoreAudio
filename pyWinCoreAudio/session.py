@@ -16,26 +16,27 @@
 # You should have received a copy of the GNU General Public License along
 # with EventGhost. If not, see <http://www.gnu.org/licenses/>.
 
-
-import comtypes
 import ctypes
 import threading
-from utils import run_in_thread, get_icon
 
-from __core_audio.constant import S_OK
+import comtypes
 
-from __core_audio.audiopolicy import (
+from .utils import run_in_thread, get_icon
+
+from .__core_audio.constant import S_OK
+
+from .__core_audio.audiopolicy import (
     IAudioSessionEvents,
     IAudioSessionNotification,
     IAudioSessionControl2,
     PIAudioSessionManager,
     PIAudioSessionManager2
 )
-from __core_audio.enum import (
+from .__core_audio.enum import (
     AudioSessionDisconnectReason,
     AudioSessionState
 )
-from __core_audio.iid import (
+from .__core_audio.iid import (
     IID_IAudioSessionManager,
     IID_IAudioSessionManager2
 )

@@ -16,16 +16,22 @@
 # You should have received a copy of the GNU General Public License along
 # with EventGhost. If not, see <http://www.gnu.org/licenses/>.
 
-
 import ctypes
+from ctypes.wintypes import (
+    INT,
+    BOOL,
+    LPCWSTR
+)
+
 import comtypes
-from enum import ERole
-from audioclient import PWAVEFORMATEX
-from propertystore import (
+
+from .enum import ERole
+from .audioclient import PWAVEFORMATEX
+from .propertystore import (
     PPROPERTYKEY,
     PPROPVARIANT
 )
-from iid import (
+from .iid import (
     IID_IPolicyConfig,
     CLSID_PolicyConfigClient,
     IID_IPolicyConfigVista,
@@ -33,11 +39,6 @@ from iid import (
     IID_AudioSes
 )
 
-from ctypes.wintypes import (
-    INT,
-    BOOL,
-    LPCWSTR
-)
 
 COMMETHOD = comtypes.COMMETHOD
 POINTER = ctypes.POINTER

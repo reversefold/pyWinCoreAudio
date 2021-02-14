@@ -17,8 +17,18 @@
 # with EventGhost. If not, see <http://www.gnu.org/licenses/>.
 
 import ctypes
+from ctypes.wintypes import (
+    FLOAT,
+    DWORD,
+    BOOL,
+    WORD,
+    HANDLE,
+    BYTE
+)
+
 import comtypes
-from iid import (
+
+from .iid import (
     IID_IActivateAudioInterfaceAsyncOperation,
     IID_IActivateAudioInterfaceCompletionHandler,
     IID_IAudioCaptureClient,
@@ -33,18 +43,9 @@ from iid import (
     IID_IChannelAudioVolume,
     IID_ISimpleAudioVolume,
 )
-from enum import (
+from .enum import (
     AUDIO_STREAM_CATEGORY,
     AUDCLNT_STREAMOPTIONS
-)
-
-from ctypes.wintypes import (
-    FLOAT,
-    DWORD,
-    BOOL,
-    WORD,
-    HANDLE,
-    BYTE
 )
 
 

@@ -17,8 +17,9 @@
 # with EventGhost. If not, see <http://www.gnu.org/licenses/>.
 
 import ctypes
-from enum import APO_BUFFER_FLAGS
 from ctypes.wintypes import (UINT)
+
+from .enum import APO_BUFFER_FLAGS
 
 POINTER = ctypes.POINTER
 UINT32 = ctypes.c_uint32

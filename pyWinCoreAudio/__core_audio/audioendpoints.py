@@ -17,11 +17,13 @@
 # with EventGhost. If not, see <http://www.gnu.org/licenses/>.
 
 import ctypes
-import comtypes
-from iid import IID_IAudioEndpointFormatControl
 from ctypes.wintypes import (
     DWORD,
 )
+
+import comtypes
+
+from .iid import IID_IAudioEndpointFormatControl
 
 COMMETHOD = comtypes.COMMETHOD
 HRESULT = ctypes.HRESULT

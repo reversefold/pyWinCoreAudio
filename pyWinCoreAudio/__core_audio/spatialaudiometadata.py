@@ -17,8 +17,16 @@
 # with EventGhost. If not, see <http://www.gnu.org/licenses/>.
 
 import ctypes
+from ctypes.wintypes import (
+    FLOAT,
+    UINT,
+    HANDLE,
+    BYTE,
+)
+
 import comtypes
-from iid import (
+
+from .iid import (
     IID_ISpatialAudioMetadataItems,
     IID_ISpatialAudioMetadataWriter,
     IID_ISpatialAudioMetadataReader,
@@ -29,25 +37,20 @@ from iid import (
     IID_ISpatialAudioObjectForMetadataItems,
     IID_ISpatialAudioObjectRenderStreamForMetadata
 )
-from audioclient import PWAVEFORMATEX
-from enum import (
+from .audioclient import PWAVEFORMATEX
+from .enum import (
     AUDIO_STREAM_CATEGORY,
     AudioObjectType,
     SpatialAudioMetadataCopyMode,
     SpatialAudioMetadataWriterOverflowMode
 )
-from mmdeviceapi import PPROPVARIANT
-from spatialaudioclient import (
+from .mmdeviceapi import PPROPVARIANT
+from .spatialaudioclient import (
     ISpatialAudioObjectBase,
     PISpatialAudioObjectRenderStreamNotify,
     ISpatialAudioObjectRenderStreamBase
 )
-from ctypes.wintypes import (
-    FLOAT,
-    UINT,
-    HANDLE,
-    BYTE,
-)
+
 
 GUID = comtypes.GUID
 COMMETHOD = comtypes.COMMETHOD

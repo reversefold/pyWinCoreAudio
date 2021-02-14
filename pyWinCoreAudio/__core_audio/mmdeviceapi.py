@@ -17,16 +17,26 @@
 # with EventGhost. If not, see <http://www.gnu.org/licenses/>.
 
 import ctypes
+from ctypes.wintypes import (
+    UINT,
+    LPARAM,
+    DWORD,
+    LPWSTR,
+    LPCWSTR,
+    LPVOID
+)
+
 import comtypes
 from comtypes import CoClass
-from propertystore import PROPERTYKEY, PIPropertyStore, PPROPVARIANT
-from enum import (
+
+from .propertystore import PROPERTYKEY, PIPropertyStore, PPROPVARIANT
+from .enum import (
     ERole,
     EDataFlow,
     PEDataFlow
 )
 
-from iid import (
+from .iid import (
     IID_IMMDevice,
     IID_IMMDeviceCollection,
     IID_IMMDeviceEnumerator,
@@ -37,14 +47,6 @@ from iid import (
     IID_MMDeviceAPILib,
     IID_IActivateAudioInterfaceAsyncOperation,
     IID_IActivateAudioInterfaceCompletionHandler
-)
-from ctypes.wintypes import (
-    UINT,
-    LPARAM,
-    DWORD,
-    LPWSTR,
-    LPCWSTR,
-    LPVOID
 )
 
 
