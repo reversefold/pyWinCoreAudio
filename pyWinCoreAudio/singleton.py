@@ -35,14 +35,14 @@ class Singleton(type):
             cls
         ).__call__(*args)
 
-        # print '{'
+        # print('{')
         #
         # for key, value in cls._instances.items():
-        #     print '   ', repr(str(key)) + ': {'
+        #     print('   ', repr(str(key)) + ': {')
         #     for k, v in value.items():
         #         k = ', '.join(repr(str(item)) for item in k)
-        #         print '        (' + k + '):', repr(str(v)) + ','
-        #     print '    },'
-        # print '}'
+        #         print('        (' + k + '):', repr(str(v)) + ',')_
+        #     print('    },')
+        # print('}')
 
         return instances[args]

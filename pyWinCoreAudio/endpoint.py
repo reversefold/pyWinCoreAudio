@@ -275,7 +275,7 @@ class AudioEndpoint(object):
                 part = subunit.part
                 try:
                     interface = part.activate(iid, pointer)
-                    print interface
+                    print(interface)
                     return interface
                 except comtypes.COMError:
                     continue
@@ -508,7 +508,7 @@ class AudioEndpoint(object):
         #         ),
         #         PIKsFormatSupport
         #     )
-        #     print 'IKsFormatSupport:', control
+        #     print('IKsFormatSupport:', control)
         #
         #     return None
 

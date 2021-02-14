@@ -42,7 +42,7 @@ def MAKEFOURCC(ch0, ch1, ch2, ch3):
 
 def mmioFOURCC(ch0, ch1, ch2, ch3):
     res = MAKEFOURCC(ch0, ch1, ch2, ch3)
-    print repr(ch0), repr(ch1), repr(ch2), repr(ch3), '=', res
+    print(repr(ch0), repr(ch1), repr(ch2), repr(ch3), '=', res)
     return res
 
 
