@@ -173,8 +173,9 @@ class IMMDevice(comtypes.IUnknown):
             'Activate',
             (['in'], REFIID, 'iid'),
             (['in'], DWORD, 'dwClsCtx'),
-            (['in'], PPROPVARIANT, 'pActivationParams', None),
-            (['out'], POINTER(LPVOID), 'ppInterface')
+            (['in'], POINTER(DWORD), 'pActivationParams', None),
+            # (['in'], PPROPVARIANT, 'pActivationParams', None),
+            (['out'], POINTER(POINTER(comtypes.IUnknown)), 'ppInterface')
         ),
         COMMETHOD(
             [],

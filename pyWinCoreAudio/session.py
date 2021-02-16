@@ -29,23 +29,25 @@ from .__core_audio.audiopolicy import (
     IAudioSessionEvents,
     IAudioSessionNotification,
     IAudioSessionControl2,
-    PIAudioSessionManager,
-    PIAudioSessionManager2
+    # PIAudioSessionManager,
+    # PIAudioSessionManager2,
+    IAudioSessionManager,
+    IAudioSessionManager2,
 )
 from .__core_audio.enum import (
     AudioSessionDisconnectReason,
-    AudioSessionState
+    AudioSessionState,
 )
 from .__core_audio.iid import (
     IID_IAudioSessionManager,
-    IID_IAudioSessionManager2
+    IID_IAudioSessionManager2,
 )
 
 
 AUDIO_SESSION_STATE = {
     AudioSessionState.AudioSessionStateInactive: 'Inactive',
     AudioSessionState.AudioSessionStateActive:   'Active',
-    AudioSessionState.AudioSessionStateExpired:  'Expired'
+    AudioSessionState.AudioSessionStateExpired:  'Expired',
 }
 
 
@@ -99,16 +101,20 @@ class AudioSessionManager(object):
         self.__update_lock = threading.Lock()
 
         try:
-            self.__session_manager = endpoint.activate(
+            self.__session_manager = endpoint.Activate(
                 IID_IAudioSessionManager2,
-                PIAudioSessionManager2
-            )
+                # PIAudioSessionManager2,
+                comtypes.CLSCTX_ALL,
+                None
+            ).QueryInterface(IAudioSessionManager2)
         except comtypes.COMError:
             try:
-                self.__session_manager = endpoint.activate(
+                self.__session_manager = endpoint.Activate(
                     IID_IAudioSessionManager,
-                    PIAudioSessionManager
-                )
+                    # PIAudioSessionManager,
+                    comtypes.CLSCTX_ALL,
+                    None
+                ).QueryInterface(IAudioSessionManager2)
             except comtypes.COMError:
                 raise NotImplementedError
 
