@@ -42,6 +42,9 @@ from .__core_audio.iid import (
     IID_IAudioSessionManager,
     IID_IAudioSessionManager2,
 )
+from .__core_audio.audioclient import (
+    ISimpleAudioVolume,
+)
 
 
 AUDIO_SESSION_STATE = {
@@ -328,6 +331,7 @@ class AudioSession(object):
     def __init__(self, session_manager, session):
         self.__session_manager = session_manager
         self.__session = session
+        self.__volume = None
 
     def release(self):
         del self.__session
@@ -410,3 +414,31 @@ class AudioSession(object):
 
     def unregister_notification_callback(self, callback):
         self.__session.UnregisterAudioSessionNotification(callback)
+
+    @property
+    def volume(self):
+        if self.__volume is None:
+            self.__volume = SimpleAudioVolume(self.__session.QueryInterface(ISimpleAudioVolume))
+        return self.__volume
+
+
+class SimpleAudioVolume(object):
+    def __init__(self, simple_audio_volume):
+        self.__simple_audio_volume = simple_audio_volume
+        self._lpcguid = ctypes.pointer(comtypes.GUID.create_new())
+
+    @property
+    def master_volume(self):
+        return self.__simple_audio_volume.GetMasterVolume()
+
+    @master_volume.setter
+    def master_volume(self, value):
+        self.__simple_audio_volume.SetMasterVolume(value, self._lpcguid)
+
+    @property
+    def mute(self):
+        return self.__simple_audio_volume.GetMute()
+
+    @mute.setter
+    def mute(self, value):
+        self.__simple_audio_volume.SetMute(value, self._lpcguid)
